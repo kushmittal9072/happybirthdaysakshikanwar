@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sakshi Kanwar ❤️ | 25th August Special</title>
+    <meta name="description" content="A magical romantic website celebrating the birthday of Queen Sakshi Kanwar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Three.js Graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🌌 Vast Deep Space Cosmic Canvas Background -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- 🎵 Background Romantic Audio Player -->
+    <audio id="romanticSongAudio" loop preload="auto">
+        <source src="assets/audio/song.mp3" type="audio/mpeg">
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="audio/mp4">
+    </audio>
+
+    <!-- 🎵 Luxury Glass Navigation Bar -->
+    <nav class="nav-container">
+        <div class="nav-glass">
+            <!-- Brand Logo -->
+            <div class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span class="logo-heart">❤️</span>
+                <span class="logo-text">Sakshi Kanwar</span>
+                <span class="crown-badge">👑</span>
+            </div>
+
+            <!-- Aesthetic Center Floating Love Badge -->
+            <div class="nav-center-pill">
+                <span class="nav-sparkle">✨</span>
+                <span class="nav-center-text">Celebrating Queen Sakshi • 25th August Special 💖</span>
+                <span class="nav-sparkle">✨</span>
+            </div>
+
+            <!-- Music Player Pill (Arijit Singh Song) -->
+            <div class="music-pill" id="musicToggleBtn" title="Play Jhol by Annural Khalid & Maanu">
+                <div class="equalizer-bars paused" id="musicVisualizer">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <span class="music-label" id="musicStatusText">Jhol 🎵</span>
+                <i data-lucide="music" class="music-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌟 SECTION 1: HERO & GRAND ENTRY -->
+    <header class="hero-section" id="hero">
+        <div class="hero-content">
+            <div class="royal-badge floating-badge">
+                <span class="badge-icon">👑</span>
+                <span class="badge-text">Born to Rule My Heart • 25 August 2005</span>
+            </div>
+
+            <h1 class="hero-title">
+                Happy Birthday, <br>
+                <span class="glow-name">Sakshi Kanwar</span>
+                <span class="pulsing-heart">❤️</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Celebrating <span class="highlight-gold">21 Glorious Years</span> of Pure Grace, Radiance & Ineffable Charm ✨
+            </p>
+
+            <!-- ⏳ Live Birthday Milestones & Live Counter -->
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <span class="dash-num" id="cdDays">00</span>
+                    <span class="dash-label">Days to 25th Aug</span>
+                </div>
+                <div class="dash-card">
+                    <span class="dash-num" id="cdHours">00</span>
+                    <span class="dash-label">Hours</span>
+                </div>
+                <div class="dash-card">
+                    <span class="dash-num" id="cdMinutes">00</span>
+                    <span class="dash-label">Minutes</span>
+                </div>
+                <div class="dash-card">
+                    <span class="dash-num" id="cdSeconds">00</span>
+                    <span class="dash-label">Seconds</span>
+                </div>
+                <div class="dash-card highlight-card">
+                    <span class="dash-num" id="daysLivedCounter">7,665+</span>
+                    <span class="dash-label">Days of Spreading Radiance 🌟</span>
+                </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+                <a href="#gallery" class="btn btn-primary">
+                    <span>Explore Our Memories</span>
+                    <i data-lucide="sparkles"></i>
+                </a>
+                <a href="#proposal" class="btn btn-proposal-glow">
+                    <span>A Question for You 💍</span>
+                    <i data-lucide="heart"></i>
+                </a>
+            </div>
+
+            <div class="scroll-down-indicator" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">
+                <span>Scroll into Magic</span>
+                <div class="mouse-scroller">
+                    <div class="mouse-dot"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 📸 SECTION 2: PHOTO REALM (CREATIVE DISPLAY) -->
+    <section class="section-container" id="gallery">
+        <div class="section-header">
+            <span class="section-tag">Captivating Moments</span>
+            <h2 class="section-title">The Magical Gallery of My Queen ✨</h2>
+            <p class="section-desc">Every single picture of yours is a masterpiece that captured my heart forever.</p>
+            
+            <div class="view-mode-toggle">
+                <button class="toggle-mode-btn active" id="modeCylinderBtn">
+                    <i data-lucide="orbit"></i> Revolving Carousel
+                </button>
+                <button class="toggle-mode-btn" id="modeCardsBtn">
+                    <i data-lucide="layers"></i> Enchanted Cards
+                </button>
+            </div>
+        </div>
+
+        <!-- Rotating Cylinder Stage -->
+        <div class="cylinder-stage-wrapper" id="cylinderStage">
+            <div class="carousel-3d-controls">
+                <button class="carousel-nav-btn prev-btn" id="prevSlideBtn" title="Previous Photo">❮</button>
+                <button class="carousel-nav-btn next-btn" id="nextSlideBtn" title="Next Photo">❯</button>
+            </div>
+
+            <div class="carousel-cylinder" id="photoCylinder">
+                <!-- Dynamically generated items from config.js -->
+            </div>
+
+            <div class="cylinder-hint">
+                <i data-lucide="move-horizontal"></i>
+                <span>Drag, swipe, or use arrows to spin through memories</span>
+            </div>
+        </div>
+
+        <!-- Cards View -->
+        <div class="hologram-cards-grid hidden" id="cardsStage">
+            <!-- Dynamically populated via main.js -->
+        </div>
+    </section>
+
+    <!-- 🎬 SECTION 3: MOMENTS FROZEN IN TIME (KUSH & SAKSHI SPECIAL SHOWCASE) -->
+    <section class="section-container" id="video-section">
+        <div class="section-header">
+            <span class="section-tag">Pure Romance</span>
+            <h2 class="section-title">Moments Frozen in Time 🎬✨</h2>
+            <p class="section-desc">A timeless portrait of Kush & Sakshi — two hearts beating as one.</p>
+        </div>
+
+        <div class="theatre-container">
+            <div class="cinema-glow-frame couple-showcase-frame">
+                <div class="couple-photo-wrapper" id="couplePhotoBox">
+                    <img src="assets/images/kush_sakshi.jpg" alt="Kush Mittal & Sakshi Kanwar" id="coupleImg" loading="lazy">
+                    <div class="couple-photo-overlay">
+                        <span class="couple-badge">👑 Soulmates Forever 👑</span>
+                        <h3 class="couple-title">Kush & Sakshi</h3>
+                        <p class="couple-caption">"Har lamha jo tumhare saath guzarta hai Sakshi, wo zindagi ka sabse khoobsurat lamha ban jata hai."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💍 SECTION 4: THE PLAYFUL PROPOSAL ARENA ("WILL YOU MARRY ME?") -->
+    <section class="section-container proposal-section" id="proposal">
+        <div class="proposal-card-3d">
+            <!-- Floating Ring Hologram -->
+            <div class="ring-box-anim">
+                <div class="sparkling-ring">💍</div>
+                <div class="ring-glow-aura"></div>
+            </div>
+
+            <span class="proposal-tag">From My Soul To Yours</span>
+            <h2 class="proposal-title" id="propTitle">A Question For Eternity 💍</h2>
+            <p class="proposal-subtitle" id="propSubtitle">
+                Sakshi, from the moment you walked into my life, every second turned into pure magic...
+            </p>
+            <h3 class="proposal-question" id="propQuestion">
+                "Will you hold my hand through every storm and sunshine, and marry me? ❤️"
+            </h3>
+
+            <!-- Evasive Dialogue Bubble (Pops up when NO is chased) -->
+            <div class="dialogue-bubble" id="dialogueBubble">
+                <span id="dialogueText">Arey! Pakad ke dikhao pehle 😜</span>
+                <div class="bubble-arrow"></div>
+            </div>
+
+            <!-- Interactive Decision Arena -->
+            <div class="proposal-arena" id="proposalArena">
+                <!-- YES BUTTON -->
+                <button class="btn-decision btn-yes" id="yesProposalBtn">
+                    <span class="btn-icon">💍</span>
+                    <span class="btn-text" id="yesBtnLabel">YES! Forever & Always ❤️</span>
+                    <div class="btn-sparkle-layer"></div>
+                </button>
+
+                <!-- RUNAWAY NO BUTTON (Escapes mouse / touch) -->
+                <button class="btn-decision btn-no" id="noProposalBtn">
+                    <span class="btn-icon">😜</span>
+                    <span class="btn-text" id="noBtnLabel">No</span>
+                </button>
+            </div>
+
+            <p class="proposal-footer-note">
+                <i data-lucide="info"></i>
+                <span>Note: The "No" button is scientifically impossible to click! 😉</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 🎉 SECTION 5: CELEBRATION GALA (VIRTUAL CAKE & WISHES) -->
+    <section class="section-container" id="celebration">
+        <div class="section-header">
+            <span class="section-tag">Birthday Extravaganza</span>
+            <h2 class="section-title">Blow the Candles & Make a Wish 🎂</h2>
+            <p class="section-desc">Sakshi, make your heart's purest wish and blow out your 21st birthday candles!</p>
+        </div>
+
+        <div class="cake-arena">
+            <!-- Virtual Cake -->
+            <div class="virtual-cake-container" id="cakeContainer">
+                <div class="candles-row" id="candlesRow">
+                    <!-- Candles generated dynamically -->
+                </div>
+                
+                <div class="cake-tier tier-top">
+                    <div class="cream-drip"></div>
+                    <div class="cake-tag">21 👑</div>
+                </div>
+                <div class="cake-tier tier-middle">
+                    <div class="strawberry-decorations">🍓 🍓 🍓 🍓 🍓</div>
+                </div>
+                <div class="cake-tier tier-bottom">
+                    <div class="cake-plate"></div>
+                </div>
+            </div>
+
+            <div class="cake-controls">
+                <button class="btn btn-primary blow-btn" id="blowCandlesBtn">
+                    <i data-lucide="wind"></i>
+                    <span>Blow Out Candles 💨</span>
+                </button>
+            </div>
+
+            <!-- Wish Reveal Box -->
+            <div class="wish-reveal-card hidden" id="wishRevealCard">
+                <div class="wish-icon">🌟</div>
+                <h3 class="wish-title">Your Birthday Wish is Sent to the Stars! ✨</h3>
+                <p class="wish-message" id="cakeWishText">
+                    May your 21st year bring endless happiness, glowing health, boundless love, and all your dreams fulfilled, my Queen Sakshi! 🎂👑❤️
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💌 SECTION 6: HEARTFELT LOVE LETTER -->
+    <section class="section-container" id="letter">
+        <div class="letter-scroll-wrapper">
+            <div class="vintage-letter-card">
+                <div class="wax-seal">
+                    <span>SK</span>
+                </div>
+                <h2 class="letter-title" id="letterTitle">A Letter from the Depths of My Heart 💌</h2>
+                <div class="letter-salutation" id="letterSalutation">Dearest Sakshi Kanwar,</div>
+                <div class="letter-body" id="letterBody">
+                    <!-- Loaded from config.js -->
+                </div>
+                <div class="letter-signature" id="letterSignature">Yours Forever & Always,<br>Kush Mittal ❤️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👑 FOOTER (Pure, Clean & Dedicated for Sakshi Kanwar) -->
+    <footer class="romantic-footer">
+        <div class="footer-content">
+            <div class="footer-heart-anim">❤️</div>
+            <h3 class="footer-title">Handcrafted with Infinite Love for Sakshi Kanwar</h3>
+            <p class="footer-sub">Happy 21st Birthday, My Forever Queen • 25 August 2005 - Eternity ✨</p>
+        </div>
+    </footer>
+
+    <!-- 🖼️ MODAL: PHOTO LIGHTBOX -->
+    <div class="lightbox-overlay hidden" id="photoModal">
+        <div class="lightbox-content">
+            <button class="modal-close-btn" id="closeModalBtn">✕</button>
+            <div class="lightbox-img-wrapper">
+                <img src="" alt="Sakshi Kanwar" id="modalImg">
+            </div>
+            <div class="lightbox-info">
+                <span class="lightbox-tag" id="modalTag">Memory</span>
+                <h3 id="modalTitle">Photo Title</h3>
+                <p id="modalCaption">Photo Caption</p>
+                <div class="modal-actions">
+                    <button class="btn-like-modal" id="modalLikeBtn">
+                        <i data-lucide="heart"></i> <span id="modalLikeCount">108</span> Loves
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💍 MODAL: PROPOSAL CELEBRATION MODAL (ON "YES") -->
+    <div class="celebration-overlay hidden" id="celebrationModal">
+        <div class="celebration-modal-card">
+            <div class="celebration-badge-anim">💍💖🎉</div>
+            <h2 class="celebration-head" id="celebHeading">SHE SAID YES! 🎉💍❤️</h2>
+            <p class="celebration-msg" id="celebMessage">
+                You just made me the happiest person in the entire universe, Sakshi! Happy Birthday to the love of my life! 🎂✨
+            </p>
+            <div class="ring-showcase-3d">
+                <span class="big-ring">💍</span>
+            </div>
+            <button class="btn btn-primary" id="closeCelebBtn">
+                <span>Continue Birthday Celebration 🎂</span>
+                <i data-lucide="party-popper"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 🍞 TOAST NOTIFICATION -->
+    <div class="toast-notification hidden" id="toastBox">
+        <i data-lucide="check-circle"></i>
+        <span id="toastMsg">Notification</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
